@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 04, 2018 at 07:06 PM
+-- Generation Time: Jan 03, 2019 at 11:46 AM
 -- Server version: 5.7.24-0ubuntu0.18.04.1
 -- PHP Version: 7.2.10-0ubuntu0.18.04.1
 
@@ -65,7 +65,9 @@ CREATE TABLE `blood_type_client` (
 
 INSERT INTO `blood_type_client` (`id`, `created_at`, `updated_at`, `client_id`, `blood_type_id`) VALUES
 (1, NULL, NULL, 62, 4),
-(3, NULL, NULL, 77, 3);
+(3, NULL, NULL, 77, 3),
+(5, NULL, NULL, 79, 4),
+(6, NULL, NULL, 80, 4);
 
 -- --------------------------------------------------------
 
@@ -88,7 +90,8 @@ INSERT INTO `categories` (`id`, `created_at`, `updated_at`, `name`) VALUES
 (1, '2018-11-16 07:04:26', '2018-11-16 07:04:26', 'Medical prevention'),
 (2, '2018-11-16 07:04:52', '2018-11-16 07:04:52', 'Medical Advice'),
 (3, '2018-11-16 07:05:25', '2018-11-16 07:05:25', 'The health'),
-(4, '2018-11-16 07:05:56', '2018-11-16 07:05:56', 'Health Nutrition');
+(4, '2018-11-16 07:05:56', '2018-11-16 07:05:56', 'Health Nutrition'),
+(7, '2018-12-30 08:27:18', '2018-12-30 08:27:18', 'tanta');
 
 -- --------------------------------------------------------
 
@@ -135,7 +138,9 @@ CREATE TABLE `city_client` (
 
 INSERT INTO `city_client` (`id`, `created_at`, `updated_at`, `city_id`, `client_id`) VALUES
 (1, NULL, NULL, 3, 62),
-(7, NULL, NULL, 1, 77);
+(7, NULL, NULL, 1, 77),
+(9, NULL, NULL, 1, 79),
+(10, NULL, NULL, 1, 80);
 
 -- --------------------------------------------------------
 
@@ -167,8 +172,11 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `created_at`, `updated_at`, `name`, `email`, `birth_date`, `phone`, `password`, `blood_type`, `donation_last_date`, `city_id`, `api_token`, `pin_code`, `remember_token`, `verifyToken`, `status`) VALUES
-(62, '2018-11-25 05:43:08', '2018-11-25 05:43:20', 'mohamed', 'mohamedsalahaamerr@gmail.com', '5555-05-05', '01001542112', '$2y$10$BVcuIH3hK.fR4XsyFbjMpOQOZO0UwRPrLx5c8AXYitdsL1MoOs98K', 'A+', '0555-05-05', 3, NULL, NULL, 'PIoN5Dq7N9GKsFbaEmNDM1UEDgKKbibXnDt5uEhln5DE0ZWtrjTTnoVAIYok', NULL, 1),
-(77, '2018-12-03 08:37:50', '2018-12-03 08:37:50', 'mohamed', 'mo@yahoo.com', '5555-05-05', '01005542112', '$2y$10$gpRZzX8Fk1rhy8MAnFPhb./mTQIHMiuGyQoMANdhY0AEkycIAwKK6', 'O+', '5555-05-05', 1, NULL, NULL, 'mCDY4rL2x49E75cOZh1hjcwDCqNVUzVXVeLHQf7K6rEuKDWWBUFlmdhugLi0', NULL, 1);
+(62, '2018-11-25 05:43:08', '2018-12-30 09:45:22', 'Mohamed Salah', 'mohamedsalahaamerr@gmail.com', '5555-05-05', '01001542112', '$2y$10$4E9.EVkPadyU2LsSbeca.eF1OtmBFqRUci/o6Avgnn9KzPZpRxtwi', 'A+', '0555-05-05', 3, NULL, NULL, '3QH3ykpH9wfk7fQfgmO3QXUbsHvIWIw04AsZJz3W7VGxaVTbpHuLeHl9DKoc', NULL, 1),
+(77, '2018-12-03 08:37:50', '2018-12-03 08:37:50', 'mohamed', 'mo@yahoo.com', '5555-05-05', '01005542112', '$2y$10$gpRZzX8Fk1rhy8MAnFPhb./mTQIHMiuGyQoMANdhY0AEkycIAwKK6', 'O+', '5555-05-05', 1, NULL, NULL, 'l2jfD5Q9m8XVqZTH6rhTlkRXMxu6Z8SskovIzW1cD9euTC3rf5HSkQkcO12E', NULL, 1),
+(79, '2018-12-30 09:35:00', '2018-12-30 09:35:00', 'mohamed', 'mohamed.slah6660@hotmail.com', '2022-02-05', '01001542812', '$2y$10$aoWBONDCvAJ7vWMJkNoVEu81dnDfa09YdPUpcWAETIb8DOmfDWLQy', 'A+', '2222-02-22', 1, NULL, NULL, 'n6zC9pdDYIvJSS6ev9Fn3ITp1iRlZ0zvME0RlnxSz1rTwFHWmE8GhRVqqj0q', '6jKSpfqDLOaTjOvieHzroMctP2U5flQrgLE0VcVQ', 1),
+(80, '2018-12-30 09:36:17', '2018-12-30 09:36:42', 'mohamed', 'mohamed.slah6660@gmail.com', '2022-02-05', '01001542512', '$2y$10$HMv1jT.R0UHjCcD98uTWW.D7SZFgSA1c43.hP9fL2Kb0WXttTseUu', 'A+', '2222-02-22', 1, NULL, NULL, '4zjGmmOnM63PlKpLHJBXorICIlxMJ7LuPUK1uNquFZl70gV9evRSariY5K4W', NULL, 1),
+(81, '2019-01-02 06:22:07', '2019-01-02 06:32:43', 'mido', 'mido@yahoo.com', '0555-05-05', '01122334455', '$2y$10$0PUsVYgzEfYY517CNagAhuTADu7zSvaAZN009VYPMw8VbSWfbUuIi', 'O-', '0555-05-05', 1, 'YLaT1nnbH46v9qPMl0RNh58uID74sl7frv65o0KNrVRISGOW713kWVdEtJsE', '2080', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -189,12 +197,12 @@ CREATE TABLE `client_notification` (
 --
 
 INSERT INTO `client_notification` (`id`, `created_at`, `updated_at`, `client_id`, `notification_id`) VALUES
-(1, NULL, NULL, 62, 2),
-(2, NULL, NULL, 62, 48),
-(3, NULL, NULL, 62, 50),
-(5, NULL, NULL, 62, 52),
-(6, NULL, NULL, 77, 53),
-(7, NULL, NULL, 77, 54);
+(15, NULL, NULL, 62, 71),
+(16, NULL, NULL, 62, 72),
+(17, NULL, NULL, 62, 73),
+(18, NULL, NULL, 77, 74),
+(19, NULL, NULL, 79, 75),
+(20, NULL, NULL, 80, 75);
 
 -- --------------------------------------------------------
 
@@ -231,7 +239,9 @@ CREATE TABLE `contacts` (
 
 INSERT INTO `contacts` (`id`, `created_at`, `updated_at`, `title`, `message`, `client_id`) VALUES
 (3, '2018-11-27 15:33:54', '2018-11-27 15:33:54', 'wfwefq', 'bhjgjh', 62),
-(4, '2018-11-27 15:33:55', '2018-11-27 15:33:55', 'wfwefq', 'bhjgjh', 62);
+(4, '2018-11-27 15:33:55', '2018-11-27 15:33:55', 'wfwefq', 'bhjgjh', 62),
+(8, '2019-01-02 06:26:26', '2019-01-02 06:26:26', 'New', 'good', 62),
+(9, '2019-01-02 07:29:32', '2019-01-02 07:29:32', 'New', 'good', 62);
 
 -- --------------------------------------------------------
 
@@ -260,34 +270,12 @@ CREATE TABLE `donations` (
 
 INSERT INTO `donations` (`id`, `created_at`, `updated_at`, `patient_name`, `patient_age`, `blood_type_id`, `blood_bags`, `hospital_name`, `hospital_address`, `phone`, `notes`, `city_id`) VALUES
 (69, '2018-11-22 19:28:00', '2018-11-22 19:28:00', 'wswdw', 4, 2, 5, 'sdsf', 'fsfdsf', '01236547896', 'fsfsf', 1),
-(70, '2018-11-22 19:29:24', '2018-11-22 19:29:24', 'wswdw', 4, 2, 5, 'sdsf', 'fsfdsf', '01236547806', 'fsfsf', 1),
 (72, '2018-11-25 06:45:36', '2018-11-25 06:45:36', 'momo', 55, 1, 5, 'wasl', 'giza', '01068676362', 'nothing', 2),
-(73, '2018-11-29 16:17:24', '2018-11-29 16:17:24', 'ddd', 55, 4, 5, 'ddd', 'ddd', '04440000000', 'ddd', 4),
-(74, '2018-11-29 16:18:07', '2018-11-29 16:18:07', 'ddd', 11, 4, 5, 'wasl', 'sds', '01011100000', 'aaaaaaaaaaaaaaaaaaaaaaaaaaa', 3),
-(75, '2018-11-29 16:26:37', '2018-11-29 16:26:37', 'dddd', 444, 1, 5, 'dddd', 'ddd', '01001542001', 'sss', 3),
-(76, '2018-11-29 16:28:18', '2018-11-29 16:28:18', 'dddd', 444, 1, 5, 'dddd', 'ddd', '01055542001', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', 4),
-(77, '2018-11-29 16:29:28', '2018-11-29 16:29:28', 'dddd', 444, 1, 5, 'dddd', 'ddd', '01055547701', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', 4),
-(78, '2018-11-29 16:34:14', '2018-11-29 16:34:14', 'dddd', 444, 1, 5, 'dddd', 'ddd', '01057747701', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', 1),
-(79, '2018-11-29 16:34:36', '2018-11-29 16:34:36', 'dddd', 444, 1, 5, 'dddd', 'ddd', '01052047701', 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh', 5),
-(80, '2018-11-29 16:39:03', '2018-11-29 16:39:03', 'ssss', 55, 4, 5, 'sss', 'sss', '01551542112', 'ssss', 3),
-(81, '2018-11-29 17:06:01', '2018-11-29 17:06:01', 'salah', 4444, 3, 8, 'ddd', 'fff', '01001777112', 'ffff', 1),
-(82, '2018-11-29 17:06:34', '2018-11-29 17:06:34', 'salah', 4444, 3, 8, 'ddd', 'fff', '01041777112', 'ffff', 1),
-(83, '2018-11-29 17:10:15', '2018-11-29 17:10:15', 'salah', 4444, 3, 8, 'ddd', 'fff', '01041747112', 'ffff', 1),
-(84, '2018-11-29 17:10:34', '2018-11-29 17:10:34', 'salah', 4444, 3, 8, 'ddd', 'fff', '71041747112', 'ffff', 1),
-(85, '2018-11-29 17:12:34', '2018-11-29 17:12:34', 'salah', 4444, 3, 8, 'ddd', 'fff', '71045747112', 'ffff', 3),
-(86, '2018-11-29 17:34:30', '2018-11-29 17:34:30', 'yousif', 11, 2, 4, 'ggg', 'tttt', '01001542112', 'tttt', 1),
-(87, '2018-11-29 17:48:16', '2018-11-29 17:48:16', 'momo', 87, 2, 5, 'sss', 'sdd', '01587542112', 'ffff', 1),
-(89, '2018-11-29 17:53:13', '2018-11-29 17:53:13', 'momo', 55, 1, 5, 'wasl', 'giza', '01068676367', 'nothing', 2),
-(91, '2018-11-29 17:56:52', '2018-11-29 17:56:52', 'momo', 55, 1, 5, 'wasl', 'giza', '01068656367', 'nothing', 2),
-(92, '2018-12-03 06:58:56', '2018-12-03 06:58:56', 'yousif', 44, 4, 4, 'wasl', 'kkkkk', '01444442112', 'wdwwee', 3),
-(93, '2018-12-03 07:22:19', '2018-12-03 07:22:19', 'yousif', 44, 4, 4, 'wasl', 'kkkkk', '01444242112', 'wdwwee', 3),
-(94, '2018-12-03 07:22:47', '2018-12-03 07:22:47', 'yousif', 44, 4, 4, 'wasl', 'kkkkk', '01444342112', 'wdwwee', 3),
-(95, '2018-12-03 07:32:15', '2018-12-03 07:32:15', 'yousif', 25, 3, 4, 'dsdsd', 'sdsds', '01785422112', 'dccc', 4),
-(96, '2018-12-03 07:35:12', '2018-12-03 07:35:12', 'momo', 55, 4, 7, 'llll', 'dssad', '01410076362', 'scdf', 3),
-(97, '2018-12-03 08:35:23', '2018-12-03 08:35:23', 'yousif', 44, 3, 4, 'wasl', 'kkkkk', '01740000000', 'dfdf', 1),
-(98, '2018-12-03 08:36:33', '2018-12-03 08:36:33', 'yousif', 44, 4, 4, 'wasl', 'dssad', '01075000000', 'sdsad', 3),
-(99, '2018-12-03 08:39:33', '2018-12-03 08:39:33', 'yousif', 44, 3, 8, 'wasl', 'Giza', '01001582112', 'sss', 1),
-(100, '2018-12-03 08:53:25', '2018-12-03 08:53:25', 'yousif', 44, 3, 4, 'wasl', 'Giza', '01001842112', 'eee', 1);
+(127, '2019-01-02 07:41:29', '2019-01-02 07:41:29', 'Mahmoud', 25, 4, 1, 'wasl', 'Cairo', '01001542112', 'good', 3),
+(128, '2019-01-02 07:42:27', '2019-01-02 07:42:27', 'yousif', 55, 4, 3, 'Wedad', 'Giza', '01000000004', 'Nothing', 3),
+(129, '2019-01-02 07:43:55', '2019-01-02 07:43:55', 'yousif', 44, 4, 4, 'Nor', 'quesna', '01000000405', 'Nothing', 3),
+(130, '2019-01-02 07:44:51', '2019-01-02 07:44:51', 'salah', 30, 3, 7, 'wasl', 'Giza', '01000000055', 'no', 1),
+(131, '2019-01-02 07:47:57', '2019-01-02 07:47:57', 'Mahmoud', 40, 4, 4, 'Elsaada', 'tanta', '01000000485', 'nothin', 1);
 
 -- --------------------------------------------------------
 
@@ -352,7 +340,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (21, '2018_11_18_080828_add_column_verify_email_table', 2),
 (22, '2018_11_18_181151_add_column_token_table', 3),
 (23, '2018_11_18_181334_add_column_token_table', 4),
-(24, '2018_11_18_192153_add_column_verify_email_table', 5);
+(24, '2018_11_18_192153_add_column_verify_email_table', 5),
+(25, '2019_01_02_085941_create_tokens_table', 6);
 
 -- --------------------------------------------------------
 
@@ -381,31 +370,14 @@ INSERT INTO `notifications` (`id`, `created_at`, `updated_at`, `title`, `content
 (7, '2018-11-21 09:33:48', '2018-11-21 09:33:48', 'You Have Notification', NULL, NULL),
 (8, '2018-11-21 09:33:49', '2018-11-21 09:33:49', 'You Have Notification', NULL, NULL),
 (29, '2018-11-22 19:28:00', '2018-11-22 19:28:00', 'You Have New Notification ', 'Belongs To wswdwAdded By mohamed', 69),
-(30, '2018-11-22 19:29:24', '2018-11-22 19:29:24', 'You Have New Notification ', 'Belongs To wswdwAdded By mohamed', 70),
 (31, '2018-11-25 06:45:36', '2018-11-25 06:45:36', 'mo', 'f', 72),
-(32, '2018-11-29 16:17:24', '2018-11-29 16:17:24', 'You Have New Notification ', 'Belongs To dddAdded By mohamed', 73),
-(33, '2018-11-29 16:18:07', '2018-11-29 16:18:07', 'You Have New Notification ', 'Belongs To dddAdded By mohamed', 74),
-(34, '2018-11-29 16:28:18', '2018-11-29 16:28:18', 'You Have New Notification ', 'Belongs To ddddAdded By mohamed', 76),
-(35, '2018-11-29 16:34:36', '2018-11-29 16:34:36', 'You Have New Notification ', 'Belongs To ddddAdded By mohamed', 79),
-(36, '2018-11-29 16:39:03', '2018-11-29 16:39:03', 'You Have New Notification ', 'Belongs To ssssAdded By mido', 80),
-(37, '2018-11-29 17:06:01', '2018-11-29 17:06:01', 'You Have New Notification ', 'Belongs To salahAdded By mohamed', 81),
-(38, '2018-11-29 17:06:34', '2018-11-29 17:06:34', 'You Have New Notification ', 'Belongs To salahAdded By mohamed', 82),
-(39, '2018-11-29 17:10:15', '2018-11-29 17:10:15', 'You Have New Notification ', 'Belongs To salahAdded By mohamed', 83),
-(40, '2018-11-29 17:10:34', '2018-11-29 17:10:34', 'You Have New Notification ', 'Belongs To salahAdded By mohamed', 84),
-(41, '2018-11-29 17:12:35', '2018-11-29 17:12:35', 'You Have New Notification ', 'Belongs To salahAdded By mohamed', 85),
-(42, '2018-11-29 17:34:30', '2018-11-29 17:34:30', 'You Have New Notification ', 'Belongs To yousifAdded By mohamed', 86),
-(43, '2018-11-29 17:48:16', '2018-11-29 17:48:16', 'You Have New Notification ', 'Belongs To momoAdded By mohamed', 87),
-(44, '2018-11-29 17:53:13', '2018-11-29 17:53:13', 'mo', 'f', 89),
-(45, '2018-11-29 17:56:52', '2018-11-29 17:56:52', 'mo', 'f', 91),
-(46, '2018-12-03 06:58:56', '2018-12-03 06:58:56', 'You Have New Notification ', 'Belongs To yousifAdded By mohamed', 92),
-(47, '2018-12-03 07:22:19', '2018-12-03 07:22:19', 'You Have New Notification ', 'Belongs To yousifAdded By mohamed', 93),
-(48, '2018-12-03 07:22:47', '2018-12-03 07:22:47', 'You Have New Notification ', 'Belongs To yousifAdded By mohamed', 94),
-(49, '2018-12-03 07:32:15', '2018-12-03 07:32:15', 'You Have New Notification ', 'Belongs To yousifAdded By mohamed', 95),
-(50, '2018-12-03 07:35:12', '2018-12-03 07:35:12', 'You Have New Notification ', 'Belongs To momoAdded By baraka', 96),
-(51, '2018-12-03 08:35:23', '2018-12-03 08:35:23', 'You Have New Notification ', 'Belongs To yousifAdded By mohamed', 97),
-(52, '2018-12-03 08:36:33', '2018-12-03 08:36:33', 'You Have New Notification ', 'Belongs To yousifAdded By mohamed', 98),
-(53, '2018-12-03 08:39:34', '2018-12-03 08:39:34', 'You Have New Notification ', 'Belongs To yousifAdded By mohamed', 99),
-(54, '2018-12-03 08:53:25', '2018-12-03 08:53:25', 'You Have New Notification ', 'Belongs To yousifAdded By mohamed', 100);
+(66, '2019-01-02 07:25:57', '2019-01-02 07:25:57', 'طلب تبرع دم', NULL, NULL),
+(67, '2019-01-02 07:26:45', '2019-01-02 07:26:45', 'طلب تبرع دم', NULL, NULL),
+(71, '2019-01-02 07:41:29', '2019-01-02 07:41:29', 'New Notification ', 'Belongs To MahmoudAdded By mohamed', 127),
+(72, '2019-01-02 07:42:28', '2019-01-02 07:42:28', 'New Notification ', 'Belongs To yousifAdded By mohamed', 128),
+(73, '2019-01-02 07:43:55', '2019-01-02 07:43:55', 'New Notification ', 'Belongs To yousifAdded By mohamed', 129),
+(74, '2019-01-02 07:44:51', '2019-01-02 07:44:51', 'New Notification ', 'Belongs To salahAdded By mohamed', 130),
+(75, '2019-01-02 07:47:57', '2019-01-02 07:47:57', 'New Notification ', 'Belongs To MahmoudAdded By Mohamed Salah', 131);
 
 -- --------------------------------------------------------
 
@@ -470,6 +442,13 @@ CREATE TABLE `reports` (
   `client_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`id`, `created_at`, `updated_at`, `message`, `client_id`) VALUES
+(2, '2019-01-02 06:26:45', '2019-01-02 06:26:45', 'Good', 62);
+
 -- --------------------------------------------------------
 
 --
@@ -488,6 +467,27 @@ CREATE TABLE `settings` (
   `whatsapp` int(11) NOT NULL,
   `instgram` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `google_url` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `created_at`, `updated_at`, `phone`, `email`, `about_app`, `facebook_url`, `twitter_url`, `whatsapp`, `instgram`, `google_url`) VALUES
+(1, NULL, NULL, '01068676362', 'mo@yahoo.com', 'qwfoiqehfekldqjwndlkwdjqwld', 'https://www.facebook.com/m.aamer13', 'https://www.facebook.com/m.aamer13', 1054785453, 'https://www.facebook.com/m.aamer13', 'https://www.facebook.com/m.aamer13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `client_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -512,7 +512,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'mohamed', 'mohamed.slah6660@gmail.com', NULL, 'ivjqDtgwBCU0U', NULL, NULL, NULL);
+(1, 'mohamed', 'mohamed.slah6660@gmail.com', NULL, 'ivjqDtgwBCU0U', 'hwmLmkRs6rMDCD15MP3NWdot0Bflmuvdjz3BccBjLUbHseO2tNTYtfonOo4u', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -638,6 +638,13 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tokens_client_id_foreign` (`client_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -657,12 +664,12 @@ ALTER TABLE `blood_types`
 -- AUTO_INCREMENT for table `blood_type_client`
 --
 ALTER TABLE `blood_type_client`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `cities`
 --
@@ -672,17 +679,17 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT for table `city_client`
 --
 ALTER TABLE `city_client`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT for table `client_notification`
 --
 ALTER TABLE `client_notification`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `client_post`
 --
@@ -692,12 +699,12 @@ ALTER TABLE `client_post`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `donations`
 --
 ALTER TABLE `donations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 --
 -- AUTO_INCREMENT for table `governerates`
 --
@@ -707,12 +714,12 @@ ALTER TABLE `governerates`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 --
 -- AUTO_INCREMENT for table `posts`
 --
@@ -722,11 +729,16 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
@@ -807,6 +819,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `reports`
   ADD CONSTRAINT `reports_client_id_foreign` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD CONSTRAINT `tokens_client_id_foreign` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
