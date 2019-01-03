@@ -1,0 +1,1 @@
+<h1 class="text-center">No Page <<< Please Visit Website From <a href="{{ url('client/home') }}">Here</a></h1>

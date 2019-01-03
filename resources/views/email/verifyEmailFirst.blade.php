@@ -1,0 +1,1 @@
+<h1>Verify Email To Activete Account</h1>
