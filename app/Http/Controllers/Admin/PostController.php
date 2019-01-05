@@ -80,8 +80,8 @@ class PostController extends Controller
         $post->title =$request->input('title');
         $post->content = $request->input('content');
         $post->category_id = $request->input('category_id');
+        $post->thumbnail = $request->input('thumbnail');
         $post->thumbnail = $fileNameStore;
-        $post->thumbnail = $file;
         $post->save();
 
         return redirect('admin/post')->with('success', 'Created Successfully');
