@@ -119,13 +119,13 @@ Donations
       <div class="text-center">{{ $donations->render() }}</div>
 
 
-
 <script>
   function myFunction() {
       if(!confirm("Are You Sure to delete this"))
       event.preventDefault();
   }
  </script>
+
 
 
 </div>

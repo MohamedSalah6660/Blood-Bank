@@ -101,6 +101,10 @@
                                 <a class="btn btn-link" href="{{ route('client.password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
+
+                                   <a class="btn btn-link" href="{{ url('client/register/create') }}">
+                                    {{ __('Create New Account') }}
+                                </a>
                             </div>
                         </div>
                     </form>
@@ -110,4 +114,3 @@
     </div>
 </div>
 
-@include('admin.layouts.footer')

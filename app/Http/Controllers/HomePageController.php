@@ -12,6 +12,8 @@ class HomePageController extends Controller
 {
     public function homepage(){
 
+    	
+
     	return view('client.home');
 
     }

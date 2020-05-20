@@ -30,7 +30,7 @@ class PostController extends Controller
     public function create()
     {
 
-        $categories = Category::pluck('name' , 'id')->toArray(); 
+        $categories = Category::pluck('name')->toArray(); 
 
         return view('admin.post.create' , compact('categories'));
     }
@@ -73,6 +73,8 @@ class PostController extends Controller
 
             $path = $request->file('thumbnail')->store('public/image');
             $file =pathinfo($path , PATHINFO_BASENAME);
+             $post->thumbnail = $file;
+
         }
 */
 

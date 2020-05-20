@@ -10,6 +10,7 @@ use App\City;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'HomePageController@index') ;
 
 //Web-Client
 Route::group(['prefix'=> 'client'] , function(){
@@ -68,6 +69,9 @@ Route::get('allposts', 'PostController@allposts')->name('search');
 
 
 
+
+
+
 Route::group(['middleware'=>'auth:web-client'], function() {
 
 Route::get('donationrequest/create', 'DonationController@create');
@@ -103,9 +107,6 @@ Route::post('report', 'ReportController@store')->name('reportclient.store');
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
